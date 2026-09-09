@@ -12,7 +12,7 @@ curl -O "https://download.swift.org/swiftly/linux/swiftly-{{ site.data.builds.sw
 You can verify the integrity of the archive using the PGP signature. This will download the signature, install the swift.org signatures into your keychain, and verify the signature.
 
 ```
-curl https://www.swift.org/keys/all-keys.asc | gpg --import -
+curl --compressed https://www.swift.org/keys/all-keys.asc | gpg --import -
 curl -O "https://download.swift.org/swiftly/linux/swiftly-{{ site.data.builds.swiftly_release.version }}-$(uname -m).tar.gz.sig"
 gpg --verify swiftly-{{ site.data.builds.swiftly_release.version }}-$(uname -m).tar.gz.sig swiftly-{{ site.data.builds.swiftly_release.version }}-$(uname -m).tar.gz
 ```
@@ -23,7 +23,7 @@ Extract the archive.
 tar -zxf swiftly-{{ site.data.builds.swiftly_release.version }}-$(uname -m).tar.gz
 ```
 
-Run the following command in your terminal, to configure swiftly for your account, and automatically download the latest swift toolchain.
+Run the following command in your terminal to configure swiftly for your account and automatically download the latest Swift toolchain.
 
 ```
 ./swiftly init
@@ -35,7 +35,7 @@ Your current shell may need some additional steps to update your session. Follow
 
 There can be certain packages that need to be installed on your system so that the Swift toolchain can function. The swiftly initialization routine will show you how to install any missing packages.
 
-Now that swiftly and swift are installed, you can access the `swift` command from the latest Swift release:
+Now that swiftly and Swift are installed, you can access the `swift` command from the latest Swift release:
 
 ```
 swift --version
@@ -44,7 +44,7 @@ Swift version {{ site.data.builds.swift_releases.last.name }} (swift-{{ site.dat
 Target: x86_64-unknown-linux-gnu
 ```
 
-Or, you can install (and use) another swift release:
+Or, you can install (and use) another Swift release:
 
 ```
 swiftly install --use 5.10
@@ -66,4 +66,4 @@ Check for updates to swiftly and install them by running the self-update command
 swiftly self-update
 ```
 
-You can discover more about swiftly in the [documentation](https://www.swift.org/swiftly/documentation/swiftlydocs/)
+You can discover more about swiftly in the [documentation](https://www.swift.org/swiftly/documentation/swiftlydocs/).
